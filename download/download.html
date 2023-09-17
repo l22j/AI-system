@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>엑셀 파일 다운로드</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -30,16 +32,25 @@
             margin-bottom: 10px;
             border-radius: 5px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
         }
 
         a {
             text-decoration: none;
             color: #0077CC;
             font-weight: bold;
+            flex: 1;
         }
 
         a:hover {
             text-decoration: underline;
+        }
+
+        .fa-file-excel {
+            color: #28A745;  /* Excel의 녹색 테마 */
+            margin-right: 10px;
+            font-size: 24px;
         }
     </style>
 </head>
@@ -47,9 +58,11 @@
 <body>
     <h1>다운로드할 엑셀 파일 목록</h1>
     <ul>
-        <li><a href="https://github.com/122j/AI-system/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx</a></li>
+        <li>
+            <i class="fas fa-file-excel"></i>
+            <a href="https://github.com/122j/AI-system/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx</a>
+        </li>
     </ul>
 </body>
 
 </html>
-
