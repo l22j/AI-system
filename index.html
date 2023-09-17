@@ -11,56 +11,52 @@
     <style>
         :root {
             --main-color: #007BFF;
-            --light-background: #fafafa;
+            --light-background: #ffffff;
             --light-font-color: #333;
-            --light-card-color: #fff;
             --dark-background: #23252a;
             --dark-font-color: #fafafa;
-            --dark-card-color: rgba(255, 255, 255, 0.08);
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            padding: 10% 20%;
+            margin: 5% 20%;
+            padding: 0;
             background-color: var(--light-background);
             color: var(--light-font-color);
-            line-height: 1.6;
+            line-height: 1.8;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         h1 {
-            font-size: 34px;
-            border-bottom: 2px solid var(--main-color);
-            padding-bottom: 15px;
-            margin-bottom: 50px;
+            font-size: 40px;
+            margin-bottom: 30px;
             font-weight: 700;
-            text-align: center;
+            border-bottom: 1px solid var(--main-color);
+            padding-bottom: 10px;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         li {
-            font-size: 18px;
-            background-color: var(--light-card-color);
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            font-size: 24px;
+            margin-bottom: 15px;
+            transition: transform 0.2s ease;
         }
 
         li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transform: translateX(10px);
         }
 
         a {
             text-decoration: none;
             color: inherit;
-            transition: color 0.3s;
+            border-bottom: 1px solid var(--main-color);
+            padding-bottom: 2px;
+            transition: color 0.2s;
         }
 
         a:hover {
@@ -117,10 +113,6 @@
         [data-theme="dark"] {
             background-color: var(--dark-background);
             color: var(--dark-font-color);
-        }
-
-        [data-theme="dark"] li {
-            background-color: var(--dark-card-color);
         }
 
     </style>
