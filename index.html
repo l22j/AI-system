@@ -7,134 +7,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI System Lectures</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For filter icon -->
     <style>
-        :root {
-            --main-color: #007BFF;
-            --light-background: #f5f5f5;
-            --light-font-color: #333;
-            --light-card-color: #fff;
-            --dark-background: #23252a;
-            --dark-font-color: #fafafa;
-            --dark-card-color: rgba(255, 255, 255, 0.08);
+        /*... (Your Previous Styles) ...*/
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light-background);
-            color: var(--light-font-color);
-            line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-size: 18px;
+        /* Filtering */
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        header, main {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .lecture-card {
-            background-color: var(--light-card-color);
+        .filter-container input[type="text"] {
+            padding: 10px;
+            border: none;
             border-radius: 5px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            margin-right: 10px;
         }
 
-        .lecture-card h2 {
-            font-size: 28px;
-            margin: 0;
-            margin-bottom: 10px;
+        .filter-container input[type="text"]:focus {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+            outline: none;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--main-color);
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Dark Mode Toggle Switch */
-        .switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
+        /* Tooltip */
+        .tooltip {
+            position: relative;
             display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        .switch input { 
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
         }
 
-        .slider:before {
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
             position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
+            z-index: 1;
+            bottom: 125%; /* Position above the text */
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        input:checked + .slider {
-            background-color: var(--main-color);
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
     </style>
 </head>
 
 <body>
     <header>
         <h1>AI System Lectures</h1>
-      <!-- <p>Welcome to the AI System Lectures page. Access the course materials below:</p> -->
     </header>
 
     <main>
-        <div class="lecture-card">
-            <h2><a href="file/Jupyter-Notebook.html">인공지능시스템(1) </a></h2>
-            <p> - Python, Jupyter Notebook </p>
+        <!-- Filter Input -->
+        <div class="filter-container">
+            <input type="text" id="filterInput" placeholder="Filter by keyword...">
+            <i class="fas fa-filter"></i>
         </div>
 
-        <div class="lecture-card">
-            <h2><a href="file/인공지능시스템1.html">인공지능시스템(2) </a></h2>
+        <!-- Lecture Cards -->
+        <div class="lecture-card tooltip">
+            <h2><a href="file/Jupyter-Notebook.html">인공지능시스템(1)</a></h2>
+            <p> - Python, Jupyter Notebook </p>
+            <span class="tooltiptext">Click to open lecture materials for 인공지능시스템(1).</span>
+        </div>
+
+        <div class="lecture-card tooltip">
+            <h2><a href="file/인공지능시스템1.html">인공지능시스템(2)</a></h2>
             <p> - Pandas, Series</p>
+            <span class="tooltiptext">Click to open lecture materials for 인공지능시스템(2).</span>
         </div>
     </main>
 
@@ -145,13 +102,25 @@
     </label>
 
     <script>
-        const themeSwitch = document.querySelector('#themeSwitch');
-        themeSwitch.addEventListener('change', function(event){
-            if (this.checked) {
-                document.body.setAttribute('data-theme', 'dark');
-            } else {
-                document.body.removeAttribute('data-theme');
-            }
+        /*... (Your Previous Scripts) ...*/
+
+        // Filtering
+        const filterInput = document.getElementById('filterInput');
+        filterInput.addEventListener('keyup', function() {
+            const filterValue = filterInput.value.toLowerCase();
+            const lectureCards = document.querySelectorAll('.lecture-card');
+
+            lectureCards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(filterValue)) {
+                    card.style.animation = "fadeIn 0.5s forwards";
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     </script>
-</body
+</body>
+
+</html>
