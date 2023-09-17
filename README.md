@@ -1,1 +1,1 @@
-# AI-system(Probabilistic Machine Learning)
+# AI-system
