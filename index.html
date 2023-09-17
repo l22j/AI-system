@@ -16,11 +16,13 @@
             --light-background: #fafafa;
             --light-font-color: #333;
             --light-card-color: #fff;
+            --light-border-color: #e0e0e0;
 
             /* Dark Mode Colors */
             --dark-background: #23252a;
             --dark-font-color: #fafafa;
             --dark-card-color: rgba(255, 255, 255, 0.08);
+            --dark-border-color: #3a3a3a;
         }
 
         [data-theme="dark"] {
@@ -28,8 +30,9 @@
             color: var(--dark-font-color);
         }
 
-        [data-theme="dark"] li {
+        [data-theme="dark"] li, [data-theme="dark"] .post-card {
             background-color: var(--dark-card-color);
+            border-color: var(--dark-border-color);
         }
 
         body {
@@ -40,50 +43,41 @@
             color: var(--light-font-color);
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
-            display: flex;
+            font-size: 18px;
         }
 
-        h1 {
-            font-size: 32px;
-            border-bottom: 2px solid var(--main-color);
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-        }
-
-        /* Sidebar Styles */
-        aside {
-            width: 25%;
+        header, main, aside {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
         }
 
         /* Main Content */
         main {
-            width: 75%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .post-card {
+            border: 1px solid var(--light-border-color);
             padding: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        /* Post Card */
-        li {
-            font-size: 16px;
-            background-color: var(--light-card-color);
-            border-left: 5px solid transparent;
-            padding: 10px 15px;
+            border-radius: 5px;
             margin-bottom: 20px;
             transition: all 0.3s ease;
-            border-radius: 7px;
         }
 
-        li:hover {
-            background-color: rgba(255, 255, 255, 0.12);
-            border-left-color: var(--main-color);
+        .post-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         a {
@@ -94,6 +88,30 @@
 
         a:hover {
             color: var(--main-color);
+        }
+
+        /* Sidebar Styles */
+        aside {
+            flex: 1;
+            margin-left: 40px;
+        }
+
+        .content {
+            flex: 2;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px 0;
         }
 
         /* Dark Mode Toggle Switch Styles */
@@ -148,25 +166,42 @@
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <aside>
+    <header>
         <h1>AI System Blog</h1>
-        <h2>Categories</h2>
-        <ul>
-            <li><a href="#">Jupyter-Notebook</a></li>
-            <li><a href="#">인공지능시스템1</a></li>
-            <!-- Add more categories here -->
-        </ul>
-    </aside>
+        <p>Welcome to the AI System Blog. Stay updated with the latest posts!</p>
+    </header>
 
-    <!-- Main Content -->
     <main>
-        <h2>Latest Posts</h2>
-        <ul>
-            <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
-            <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
+        <!-- Main Content -->
+        <div class="content">
+            <div class="post-card">
+                <h2><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></h2>
+                <p>Lorem ipsum description about Jupyter-Notebook. Read more...</p>
+            </div>
+
+            <div class="post-card">
+                <h2><a href="file/인공지능시스템1.html">인공지능시스템1</a></h2>
+                <p>Lorem ipsum description about 인공지능시스템1. Read more...</p>
+            </div>
             <!-- Add more posts here -->
-        </ul>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Jupyter-Notebook</a></li>
+                <li><a href="#">인공지능시스템1</a></li>
+                <!-- Add more categories here -->
+            </ul>
+
+            <h2>Recent Posts</h2>
+            <ul>
+                <li><a href="#">Recent Post 1</a></li>
+                <li><a href="#">Recent Post 2</a></li>
+                <!-- Add more recent posts here -->
+            </ul>
+        </aside>
     </main>
 
     <!-- Dark Mode Toggle Switch -->
