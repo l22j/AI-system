@@ -15,10 +15,30 @@
             color: #333;
         }
 
-        h1 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
+        .folder {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 30px 20px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
+            position: relative;
+        }
+
+        .folder:before {
+            content: "";
+            border-top: 20px solid #f4f4f4;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .folder-name {
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 1.2em;
         }
 
         ul {
@@ -27,13 +47,9 @@
         }
 
         li {
-            background-color: #fff;
-            padding: 10px 20px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
+            margin-bottom: 10px;
         }
 
         a {
@@ -41,6 +57,7 @@
             color: #0077CC;
             font-weight: bold;
             flex: 1;
+            margin-left: 10px;
         }
 
         a:hover {
@@ -49,20 +66,23 @@
 
         .fa-file-excel {
             color: #28A745;  /* Excel의 녹색 테마 */
-            margin-right: 10px;
             font-size: 24px;
         }
     </style>
 </head>
 
 <body>
-    <h1>다운로드할 엑셀 파일 목록</h1>
-    <ul>
-        <li>
-            <i class="fas fa-file-excel"></i>
-            <a href="https://github.com/122j/AI-system/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx</a>
-        </li>
-    </ul>
+    <h1>다운로드 폴더</h1>
+    <div class="folder">
+        <div class="folder-name">Documents</div>
+        <ul>
+            <li>
+                <i class="fas fa-file-excel"></i>
+                <a href="https://github.com/122j/AI-system/raw/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx</a>
+            </li>
+            <!-- 추가 파일들을 이곳에 넣으면 됩니다. -->
+        </ul>
+    </div>
 </body>
 
 </html>
