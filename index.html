@@ -9,17 +9,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Common Colors */
             --main-color: #007BFF;
-            --secondary-color: #fafafa;
-            --accent-color: #555;
+
+            /* Light Mode Colors */
+            --light-background: #fafafa;
+            --light-font-color: #333;
+            --light-card-color: #fff;
+
+            /* Dark Mode Colors */
+            --dark-background: #23252a;
+            --dark-font-color: #fafafa;
+            --dark-card-color: rgba(255, 255, 255, 0.08);
+        }
+
+        [data-theme="dark"] {
+            background-color: var(--dark-background);
+            color: var(--dark-font-color);
+        }
+
+        [data-theme="dark"] li {
+            background-color: var(--dark-card-color);
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
             padding: 5% 15%;
-            background: linear-gradient(135deg, #23252a, #363941);
-            color: var(--secondary-color);
+            background-color: var(--light-background);
+            color: var(--light-font-color);
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         h1 {
@@ -38,7 +57,7 @@
 
         li {
             font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.08);
+            background-color: var(--light-card-color);
             border-left: 5px solid transparent;
             padding: 10px 15px;
             margin-bottom: 15px;
@@ -53,13 +72,62 @@
 
         a {
             text-decoration: none;
-            color: var(--secondary-color);
+            color: inherit;
             transition: color 0.3s;
         }
 
         a:hover {
             color: var(--main-color);
         }
+
+        /* Dark Mode Toggle Switch Styles */
+        .switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--main-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
     </style>
 </head>
 
@@ -68,8 +136,23 @@
     <ul>
         <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
         <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
-        <!-- Other HTML file links can be added here -->
     </ul>
-</body>
 
+    <!-- Dark Mode Toggle Switch -->
+    <label class="switch">
+        <input type="checkbox" id="themeSwitch">
+        <span class="slider"></span>
+    </label>
+
+    <script>
+        const themeSwitch = document.querySelector('#themeSwitch');
+        themeSwitch.addEventListener('change', function(event){
+            if (this.checked) {
+                document.body.setAttribute('data-theme', 'dark');
+            } else {
+                document.body.removeAttribute('data-theme');
+            }
+        });
+    </script>
+</body>
 </html>
