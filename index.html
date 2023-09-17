@@ -6,134 +6,167 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI System Files</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Root Variables */
         :root {
+            /* Common Colors */
             --main-color: #007BFF;
-            --secondary-color: #FF6347;
-            --light-background: #EDEDED;
-            --dark-background: #333;
-            --light-font: #333;
-            --dark-font: #EDEDED;
+            --secondary-color: #FF5757;
+
+            /* Light Mode Colors */
+            --light-background: #ffffff;
+            --light-font-color: #333;
+            --light-card-color: #f5f5f5;
+
+            /* Dark Mode Colors */
+            --dark-background: #1a1a1a;
+            --dark-font-color: #fafafa;
+            --dark-card-color: #2a2a2a;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
-            color: var(--light-font);
-            transition: all 0.3s ease;
-        }
-
-        [data-theme="dark"] {
-            background: var(--dark-background);
-            color: var(--dark-font);
-        }
-
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            position: sticky;
-            top: 0;
-            background: rgba(0, 123, 255, 0.7);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 5% 15%;
+            background-color: var(--light-background);
+            color: var(--light-font-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
+            font-size: 34px;
+            margin-bottom: 30px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: var(--main-color);
         }
 
-        /* Course Cards */
-        .course-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            background-color: var(--light-card-color);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
             border-radius: 10px;
-            margin: 20px 0;
-            transition: transform 0.3s ease;
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .course-card:hover {
-            transform: translateY(-10px);
+        li:hover {
+            background-color: var(--secondary-color);
+            color: white;
         }
 
         a {
             text-decoration: none;
             color: inherit;
+            transition: color 0.3s;
         }
 
-        .course-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .course-description {
+        .description {
+            display: block;
             font-size: 14px;
-            opacity: 0.8;
+            margin-top: 8px;
+            font-weight: 400;
+            color: rgba(51, 51, 51, 0.7);
+            transition: color 0.3s ease;
         }
 
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            font-size: 24px;
+        [data-theme="dark"] {
+            background-color: var(--dark-background);
+            color: var(--dark-font-color);
+        }
+
+        [data-theme="dark"] li {
+            background-color: var(--dark-card-color);
+        }
+
+        [data-theme="dark"] .description {
+            color: rgba(250, 250, 250, 0.7);
+        }
+
+        /* Dark Mode Toggle Switch Styles */
+        .switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input { 
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
             cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
         }
 
-        [data-theme="dark"] .dark-mode-toggle {
-            color: var(--dark-font);
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
         }
 
+        input:checked + .slider {
+            background-color: var(--main-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
     </style>
 </head>
 
 <body>
+    <h1>2023-2 AI System</h1>
+    <ul>
+        <li>
+            <a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a>
+            <span class="description">Jupyter Notebook에 대한 강의 자료입니다.</span>
+        </li>
+        <li>
+            <a href="file/인공지능시스템1.html">인공지능시스템1</a>
+            <span class="description">인공지능 시스템 기초 강의 자료입니다.</span>
+        </li>
+    </ul>
 
-    <!-- Navbar -->
-    <nav>
-        <h1>AI System 2023-2</h1>
-        <i class="far fa-moon dark-mode-toggle" id="darkModeToggle"></i>
-    </nav>
-
-    <!-- Content -->
-    <div class="content" style="padding: 50px;">
-        <div class="course-card">
-            <a href="file/Jupyter-Notebook.html">
-                <div class="course-title">Jupyter-Notebook</div>
-                <div class="course-description">Jupyter Notebook에 대한 강의 자료입니다.</div>
-            </a>
-        </div>
-        <div class="course-card">
-            <a href="file/인공지능시스템1.html">
-                <div class="course-title">인공지능시스템1</div>
-                <div class="course-description">인공지능 시스템 기초 강의 자료입니다.</div>
-            </a>
-        </div>
-    </div>
+    <!-- Dark Mode Toggle Switch -->
+    <label class="switch">
+        <input type="checkbox" id="themeSwitch">
+        <span class="slider"></span>
+    </label>
 
     <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        darkModeToggle.addEventListener('click', function() {
-            const body = document.body;
-            if (body.hasAttribute('data-theme')) {
-                body.removeAttribute('data-theme');
-                darkModeToggle.className = 'far fa-moon dark-mode-toggle';
+        const themeSwitch = document.querySelector('#themeSwitch');
+        themeSwitch.addEventListener('change', function(event){
+            if (this.checked) {
+                document.body.setAttribute('data-theme', 'dark');
             } else {
-                body.setAttribute('data-theme', 'dark');
-                darkModeToggle.className = 'far fa-sun dark-mode-toggle';
+                document.body.removeAttribute('data-theme');
             }
         });
     </script>
 </body>
-
 </html>
