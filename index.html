@@ -13,10 +13,9 @@
             --main-color: #007BFF;
 
             /* Light Mode Colors */
-            --light-background: #F7F8FC;
+            --light-background: #fafafa;
             --light-font-color: #333;
             --light-card-color: #fff;
-            --light-border-color: #E7E9EB;
 
             /* Dark Mode Colors */
             --dark-background: #23252a;
@@ -46,34 +45,29 @@
             font-size: 32px;
             border-bottom: 2px solid var(--main-color);
             padding-bottom: 15px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.08em;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         li {
             font-size: 16px;
             background-color: var(--light-card-color);
-            border-bottom: 1px solid var(--light-border-color);
-            padding: 15px 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        li:last-child {
-            border-bottom: none;
+            border-left: 5px solid transparent;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            border-radius: 7px;
         }
 
         li:hover {
-            background-color: rgba(0, 123, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.12);
+            border-left-color: var(--main-color);
         }
 
         a {
@@ -86,6 +80,18 @@
             color: var(--main-color);
         }
 
+        .description {
+            display: block;
+            font-size: 12px;
+            margin-top: 5px;
+            color: rgba(51, 51, 51, 0.7); /* Light mode */
+            transition: color 0.3s ease;
+        }
+
+        [data-theme="dark"] .description {
+            color: rgba(250, 250, 250, 0.7); /* Dark mode */
+        }
+
         /* Dark Mode Toggle Switch Styles */
         .switch {
             position: fixed;
@@ -96,7 +102,7 @@
             height: 34px;
         }
 
-        .switch input {
+        .switch input { 
             opacity: 0;
             width: 0;
             height: 0;
@@ -133,15 +139,20 @@
         input:checked + .slider:before {
             transform: translateX(26px);
         }
-
     </style>
 </head>
 
 <body>
-    <h1>AI System Lectures</h1>
+    <h1>2023-2 AI System</h1>
     <ul>
-        <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
-        <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
+        <li>
+            <a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a>
+            <span class="description">Jupyter Notebook에 대한 강의 자료입니다.</span>
+        </li>
+        <li>
+            <a href="file/인공지능시스템1.html">인공지능시스템1</a>
+            <span class="description">인공지능 시스템 기초 강의 자료입니다.</span>
+        </li>
     </ul>
 
     <!-- Dark Mode Toggle Switch -->
@@ -161,5 +172,4 @@
         });
     </script>
 </body>
-
 </html>
