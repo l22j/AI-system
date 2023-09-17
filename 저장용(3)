@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- ... (나머지 코드는 생략됨) ... -->
+
+<style>
+    /* ... (이전 스타일은 생략됨) ... */
+
+    li {
+        /* ... (이전 스타일은 생략됨) ... */
+        position: relative;
+    }
+
+    a {
+        /* ... (이전 스타일은 생략됨) ... */
+        display: block;  /* 전체 li 영역을 채우도록 설정 */
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+</style>
+
+<body>
+    <!-- ... (나머지 코드는 생략됨) ... -->
+
+    <ul>
+        <li>
+            <a href="file/Jupyter-Notebook.html"></a> <!-- li의 전체 영역을 채우기 위한 링크 -->
+            Jupyter-Notebook
+        </li>
+        <li>
+            <a href="file/인공지능시스템1.html"></a> <!-- li의 전체 영역을 채우기 위한 링크 -->
+            인공지능시스템1
+        </li>
+    </ul>
+
+    <!-- ... (나머지 코드는 생략됨) ... -->
+</body>
+</html>
