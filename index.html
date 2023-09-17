@@ -6,35 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI System Files</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --main-color: #007BFF;
             --light-background: #fafafa;
             --light-font-color: #333;
-            --light-card-color: #fff;
             --dark-background: #23252a;
             --dark-font-color: #fafafa;
-            --dark-card-color: rgba(255, 255, 255, 0.08);
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Roboto', sans-serif;
             padding: 10% 20%;
             background-color: var(--light-background);
             color: var(--light-font-color);
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
         }
 
         h1 {
-            font-size: 34px;
-            border-bottom: 2px solid var(--main-color);
-            padding-bottom: 15px;
-            margin-bottom: 50px;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 60px;
             font-weight: 700;
-            text-align: center;
+            letter-spacing: 0.1em;
         }
 
         ul {
@@ -43,32 +41,11 @@
         }
 
         li {
-            font-size: 24px;
-            margin-bottom: 15px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            background-color: rgba(0, 123, 255, 0.05); /* 배경색 추가 */
-            padding: 10px; /* 패딩 추가 */
-            border-radius: 5px; /* 둥근 모서리 추가 */
-            position: relative; /* 작은 점을 위한 포지션 설정 */
-}
-
-         li:before {
-            content: ''; /* 작은 점 표시 */
-            width: 6px;
-            height: 6px;
-            border-radius: 50%; /* 동그라미 모양 */
-            background-color: var(--main-color);
-            position: absolute;
-            left: -20px; /* 점의 위치 조절 */
-            top: 50%;
-            transform: translateY(-50%);
-}
-
-        li:hover {
-            transform: translateX(10px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 그림자 효과 추가 */
-}
-
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
 
         a {
             text-decoration: none;
@@ -82,8 +59,9 @@
 
         .switch {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             display: inline-block;
             width: 60px;
             height: 34px;
@@ -132,15 +110,11 @@
             color: var(--dark-font-color);
         }
 
-        [data-theme="dark"] li {
-            background-color: var(--dark-card-color);
-        }
-
     </style>
 </head>
 
 <body>
-    <h1>2023-2 AI System</h1>
+    <h1>AI System 2023-2</h1>
     <ul>
         <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
         <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
