@@ -5,48 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI System Lecture Notes</title>
+    <title>AI System Files</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --main-color: #007BFF;
             --light-background: #fafafa;
             --light-font-color: #333;
             --light-card-color: #fff;
-            --dark-background: #2a2c30;
+            --dark-background: #23252a;
             --dark-font-color: #fafafa;
-            --dark-card-color: #3a3c40;
-        }
-
-        [data-theme="dark"] {
-            background-color: var(--dark-background);
-            color: var(--dark-font-color);
-        }
-
-        [data-theme="dark"] li {
-            background-color: var(--dark-card-color);
+            --dark-card-color: rgba(255, 255, 255, 0.08);
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            padding: 3% 15%;
+            padding: 10% 20%;
             background-color: var(--light-background);
             color: var(--light-font-color);
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         h1 {
             font-size: 34px;
-            margin-bottom: 30px;
+            border-bottom: 2px solid var(--main-color);
+            padding-bottom: 15px;
+            margin-bottom: 50px;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            text-align: center;
         }
 
         ul {
@@ -57,15 +45,16 @@
         li {
             font-size: 18px;
             background-color: var(--light-card-color);
-            border-left: 5px solid transparent;
-            padding: 12px 18px;
+            padding: 15px 20px;
             margin-bottom: 20px;
-            transition: all 0.3s ease;
-            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
         }
 
         li:hover {
-            border-left-color: var(--main-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         a {
@@ -78,8 +67,10 @@
             color: var(--main-color);
         }
 
-        /* Dark Mode Toggle Switch Styles */
         .switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
             display: inline-block;
             width: 60px;
             height: 34px;
@@ -122,24 +113,30 @@
         input:checked + .slider:before {
             transform: translateX(26px);
         }
+
+        [data-theme="dark"] {
+            background-color: var(--dark-background);
+            color: var(--dark-font-color);
+        }
+
+        [data-theme="dark"] li {
+            background-color: var(--dark-card-color);
+        }
+
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>2023-2 AI System Lecture Notes</h1>
-        <!-- Dark Mode Toggle Switch -->
-        <label class="switch">
-            <input type="checkbox" id="themeSwitch">
-            <span class="slider"></span>
-        </label>
-    </header>
-    
+    <h1>2023-2 AI System</h1>
     <ul>
-        <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook Introduction</a></li>
-        <li><a href="file/인공지능시스템1.html">Basics of AI System</a></li>
-        <!-- Add other lecture notes as needed -->
+        <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
+        <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
     </ul>
+
+    <label class="switch">
+        <input type="checkbox" id="themeSwitch">
+        <span class="slider"></span>
+    </label>
 
     <script>
         const themeSwitch = document.querySelector('#themeSwitch');
