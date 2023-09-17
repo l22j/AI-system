@@ -6,24 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI System Files</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --main-color: #007BFF;
+            --secondary-color: #fafafa;
+            --accent-color: #555;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             padding: 5% 15%;
-            background-color: #fafafa;
-            color: #555;
+            background: linear-gradient(135deg, #23252a, #363941);
+            color: var(--secondary-color);
             line-height: 1.6;
-            transition: background-color 0.3s;
         }
 
         h1 {
-            font-size: 28px;
-            border-bottom: 2px solid #e0e0e0;
+            font-size: 32px;
+            border-bottom: 2px solid var(--main-color);
             padding-bottom: 15px;
             margin-bottom: 30px;
             font-weight: 700;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
         }
 
         ul {
@@ -33,38 +38,37 @@
 
         li {
             font-size: 16px;
-            background-color: #ffffff;
-            border-left: 4px solid #007BFF;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-left: 5px solid transparent;
             padding: 10px 15px;
             margin-bottom: 15px;
             transition: all 0.3s ease;
-            border-radius: 5px; /* 라운드 처리 */
-            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+            border-radius: 7px;
         }
 
         li:hover {
-            background-color: #f3f3f3;
-            border-left: 4px solid #0056b3;
+            background-color: rgba(255, 255, 255, 0.12);
+            border-left-color: var(--main-color);
         }
 
         a {
             text-decoration: none;
-            color: #555;
+            color: var(--secondary-color);
             transition: color 0.3s;
         }
 
         a:hover {
-            color: #007BFF;
+            color: var(--main-color);
         }
     </style>
 </head>
 
 <body>
-    <h1>2023-2 인공지능시스템</h1>
+    <h1>2023-2 AI System</h1>
     <ul>
         <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
         <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
-        <!-- 기타 다른 HTML 파일들에 대한 링크를 이곳에 추가 -->
+        <!-- Other HTML file links can be added here -->
     </ul>
 </body>
 
