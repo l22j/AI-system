@@ -8,35 +8,18 @@
     <title>HTML Files List</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;  /* 폰트 변경 */
+            padding: 5% 15%;
+            background-color: #fafafa;
+            color: #555;
+            line-height: 1.6;
         }
 
-        header {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        main {
-            width: 80%;
-            margin: 40px auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        h1 {
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 27px;
+            font-weight: 400;
         }
 
         ul {
@@ -45,43 +28,37 @@
         }
 
         li {
-            border-bottom: 1px solid #e0e0e0;
-            padding: 8px 0;
+            background-color: #ffffff;
+            border-left: 4px solid #007BFF;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
         }
 
-        li:last-child {
-            border-bottom: none;
+        li:hover {
+            background-color: #f3f3f3;
+            border-left: 4px solid #0056b3;
         }
 
         a {
             text-decoration: none;
-            color: #007BFF;
-            font-weight: 500;
+            color: #555;
+            font-style: italic;
         }
 
         a:hover {
-            color: #0056b3;
+            color: #007BFF;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>2023-2 인공지능시스템</h1>
-    </header>
-
-    <main>
-        <ul>
-            <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
-            <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
-            <!-- 기타 다른 HTML 파일들에 대한 링크를 이곳에 추가 -->
-        </ul>
-    </main>
-
-    <footer>
-        © 2023 AI-System University
-    </footer>
+    <h1>2023-2 인공지능시스템</h1>
+    <ul>
+        <li><a href="file/Jupyter-Notebook.html">Jupyter-Notebook</a></li>
+        <li><a href="file/인공지능시스템1.html">인공지능시스템1</a></li>
+        <!-- 기타 다른 HTML 파일들에 대한 링크를 이곳에 추가 -->
+    </ul>
 </body>
 
 </html>
-
