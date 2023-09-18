@@ -5,68 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Download</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            padding: 50px;
-            color: #333;
-        }
-
-        .file-browser {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 70%;
-            margin: 0 auto;
-        }
-
-        .file-item {
-            border-bottom: 1px solid #e0e0e0;
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-
-        .file-icon {
-            width: 30px;
-            margin-right: 10px;
-        }
-
-        .file-link {
-            text-decoration: none;
-            color: #0077CC;
-            font-size: 1.2em;
-            flex-grow: 1;
-        }
-
-        .file-link:hover {
-            color: #005599;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 
 <body>
-    <h1>File Browser</h1>
-    <div class="file-browser">
-        <div class="file-item">
-            <!-- 파일 아이콘 이미지를 사용하려면 아래 이미지 경로를 변경하세요. -->
-            <img src="path_to_your_file_icon.png" alt="File Icon" class="file-icon">
-            <a href="https://raw.githubusercontent.com/l22j/AI-system/main/download/%EB%82%A8%EB%B6%81%ED%95%9C%EB%B0%9C%EC%A0%84%EC%A0%84%EB%A0%A5%EB%9F%89.xlsx" download>남북한발전전력량.xlsx 다운로드</a>
-
-        </div>
-        <!-- 추가 파일은 같은 형식으로 이곳에 넣으면 됩니다!!!! -->
-    </div>
+    <h1>다운로드 리스트</h1>
+    <ul>
+        <li><a href="https://raw.githubusercontent.com/l22j/AI-system/main/download/%EB%82%A8%EB%B6%81%ED%95%9C%EB%B0%9C%EC%A0%84%EC%A0%84%EB%A0%A5%EB%9F%89.xlsx" download>남북한발전전력량.xlsx</a></li>
+        <!-- 추가 파일은 <li> 태그로 이곳에 넣으면 됩니다. -->
+    </ul>
 </body>
 
 </html>
-
-
-
-
