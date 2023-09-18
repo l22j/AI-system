@@ -11,32 +11,51 @@
             background-color: #f4f4f4;
             padding: 50px;
             color: #333;
-            text-align: center;
         }
 
-        a {
+        .download-list {
+            list-style-type: none;
+            padding: 0;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .download-list li {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .download-list li:hover {
+            background-color: #e8e8e8;
+        }
+
+        .download-link {
             text-decoration: none;
             color: #0077CC;
-            font-weight: bold;
             font-size: 1.2em;
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px 15px;
-            border: 2px solid #0077CC;
-            border-radius: 5px;
         }
 
-        a:hover {
-            background-color: #0077CC;
-            color: #fff;
+        .download-link:hover {
+            color: #005599;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 
 <body>
-    <h1>다운로드 링크</h1>
-    <a href="https://github.com/122j/AI-system/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx </a>
-    <!-- 추가 링크는 이곳에 넣으면 됩니다. -->
+    <h1>다운로드 목록</h1>
+    <ul class="download-list">
+        <li><a class="download-link" href="https://github.com/122j/AI-system/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx</a></li>
+        <!-- 추가 링크는 <li> 태그로 이곳에 넣으면 됩니다. -->
+    </ul>
 </body>
 
 </html>
