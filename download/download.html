@@ -13,33 +13,35 @@
             color: #333;
         }
 
-        .download-list {
-            list-style-type: none;
-            padding: 0;
-            width: 50%;
+        .file-browser {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 70%;
             margin: 0 auto;
         }
 
-        .download-list li {
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #e0e0e0;
-            margin: 5px 0;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+        .file-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
         }
 
-        .download-list li:hover {
-            background-color: #e8e8e8;
+        .file-icon {
+            width: 30px;
+            margin-right: 10px;
         }
 
-        .download-link {
+        .file-link {
             text-decoration: none;
             color: #0077CC;
             font-size: 1.2em;
+            flex-grow: 1;
         }
 
-        .download-link:hover {
+        .file-link:hover {
             color: #005599;
         }
 
@@ -51,13 +53,19 @@
 </head>
 
 <body>
-    <h1>다운로드 목록</h1>
-    <ul class="download-list">
-        <li><a class="download-link" href="https://raw.githubusercontent.com/122j/AI-system/main/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx</a>
-</a>
-</li>
-        <!-- 추가 링크는 <li> 태그로 이곳에 넣으면 됩니다. -->
-    </ul>
+    <h1>File Browser</h1>
+    <div class="file-browser">
+        <div class="file-item">
+            <!-- 파일 아이콘 이미지를 사용하려면 아래 이미지 경로를 변경하세요. -->
+            <img src="path_to_your_file_icon.png" alt="File Icon" class="file-icon">
+            <a class="file-link" href="https://raw.githubusercontent.com/122j/AI-system/main/download/남북한발전전력량.xlsx" download>남북한발전전력량.xlsx</a>
+        </div>
+        <!-- 추가 파일은 같은 형식으로 이곳에 넣으면 됩니다!!!! -->
+    </div>
 </body>
 
 </html>
+
+
+
+
