@@ -12,23 +12,12 @@
             font-family: 'Roboto', sans-serif; /* 폰트 적용 */
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[download]').forEach(function(anchor) {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault(); // 기본 동작을 방지합니다.
-                    window.location.href = e.target.href + "?download";
-                });
-            });
-        });
-    </script>
-</head>
 
 <body>
     <h1>File list</h1>
     <ul>
         <li><a href="https://raw.githubusercontent.com/l22j/AI-system/main/download/%EB%82%A8%EB%B6%81%ED%95%9C%EB%B0%9C%EC%A0%84%EC%A0%84%EB%A0%A5%EB%9F%89.xlsx" download>남북한발전전력량.xlsx</a></li>
-        <li><a href="https://raw.githubusercontent.com/l22j/AI-system/main/download/auto-mpg.csv" download>auto-mpg.csv</a></li>
+        <li><a href="https://raw.githubusercontent.com/l22j/AI-system/main/download/auto-mpg.zip" download>auto-mpg.csv(zip)</a></li>
         <!-- 추가 파일은 <li> 태그로 이곳에 넣으면 됩니다. -->
     </ul>
 </body>
