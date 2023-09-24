@@ -12,6 +12,16 @@
             font-family: 'Roboto', sans-serif; /* 폰트 적용 */
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[download]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault(); // 기본 동작을 방지합니다.
+                    window.location.href = e.target.href + "?download";
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
