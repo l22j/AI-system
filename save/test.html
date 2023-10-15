@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(test)AI System Files</title>
+    <title>AI System Files</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
@@ -114,44 +114,48 @@
             background-color: var(--dark-background);
             color: var(--dark-font-color);
         }
-        #loading {
-            position: fixed;
-            top: 0;
-            left: 0;
+
+        /* 폰트 크기 조절 슬라이더 스타일 */
+        .font-slider-container {
+            margin: 30px 0;
+        }
+
+        .font-slider {
             width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.9);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        .loader {
-            border: 16px solid #f3f3f3;
-            border-top: 16px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 2s linear infinite;
+        /* 최상단으로 스크롤 버튼 스타일 */
+        .top-btn {
+            display: none; /* 기본적으로 숨김 */
+            position: fixed;
+            bottom: 60px;
+            right: 20px;
+            z-index: 99;
+            background: var(--main-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 18px;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .top-btn:hover {
+            background-color: #0056b3;
         }
-
     </style>
 </head>
 
 <body>
-    <!-- 로딩 애니메이션 추가 -->
-    <div id="loading">
-        <div class="loader"></div>
+    <!-- 폰트 크기 조절 슬라이더 추가 -->
+    <div class="font-slider-container">
+        <label>Adjust font size: <input type="range" class="font-slider" min="14" max="24" value="16"></label>
     </div>
     
     <h1>2023-2 인공지능시스템</h1>
     <ul>
+
+        
         <li>
             <a href="https://l22j.github.io/AI-system/download/download.html">Download</a>
             <p class="description">- 예제 파일 다운로드</p>
@@ -181,15 +185,18 @@
             <a href="file/인공지능시스템4.html">인공지능시스템(4)</a>
             <p class="description">- Matplotlib(visualization)</p>
         </li> 
+
+        
         
     </ul>
+
     <label class="switch">
         <input type="checkbox" id="themeSwitch">
         <span class="slider"></span>
     </label>
+    <button onclick="topFunction()" class="top-btn" id="topBtn">Top</button>
 
     <script>
-        // 테마 전환 스크립트
         const themeSwitch = document.querySelector('#themeSwitch');
         themeSwitch.addEventListener('change', function(event){
             if (this.checked) {
@@ -198,17 +205,25 @@
                 document.body.removeAttribute('data-theme');
             }
         });
+        const fontSlider = document.querySelector('.font-slider');
+        fontSlider.addEventListener('input', function() {
+            document.body.style.fontSize = this.value + 'px';
+        });
 
-        // 로딩 애니메이션 스크립트
-        document.onreadystatechange = function() {
-            if (document.readyState !== "complete") {
-                document.querySelector("body").style.visibility = "hidden";
-                document.querySelector("#loading").style.visibility = "visible";
+        // 최상단으로 스크롤 스크립트
+        const topBtn = document.getElementById("topBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                topBtn.style.display = "block";
             } else {
-                document.querySelector("#loading").style.display = "none";
-                document.querySelector("body").style.visibility = "visible";
+                topBtn.style.display = "none";
             }
-        };
+        }
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
     </script>
 </body>
 </html>
