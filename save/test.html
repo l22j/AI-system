@@ -135,13 +135,24 @@
             color: white;
             border: none;
             cursor: pointer;
-            border-radius: 4px;
-            padding: 10px 20px;
-            font-size: 18px;
+            border-radius: 50%; /* 원형 모양 */
+            padding: 10px;
+            width: 50px; /* 정사각형으로 고정 */
+            height: 50px; /* 정사각형으로 고정 */
+            text-align: center;
+            line-height: 30px; /* 아이콘의 수직 위치를 조절 */
+            transition: background 0.3s; /* 부드러운 전환 효과 */
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2); /* 약간의 그림자 효과 */
         }
 
         .top-btn:hover {
             background-color: #0056b3;
+        }
+
+        .top-btn::before {
+            content: '⬆'; /* 위쪽 화살표 아이콘 */
+            font-size: 20px; /* 아이콘 크기 */
+            font-weight: bold;
         }
     </style>
 </head>
@@ -194,17 +205,14 @@
         <input type="checkbox" id="themeSwitch">
         <span class="slider"></span>
     </label>
-    <button onclick="topFunction()" class="top-btn" id="topBtn">Top</button>
+
+    <!-- 수정된 최상단으로 스크롤 버튼 -->
+    <button onclick="topFunction()" class="top-btn" id="topBtn"></button>
 
     <script>
-        const themeSwitch = document.querySelector('#themeSwitch');
-        themeSwitch.addEventListener('change', function(event){
-            if (this.checked) {
-                document.body.setAttribute('data-theme', 'dark');
-            } else {
-                document.body.removeAttribute('data-theme');
-            }
-        });
+        ... <!-- 기존의 script 내용은 생략 -->
+
+        // 폰트 크기 조절 스크립트
         const fontSlider = document.querySelector('.font-slider');
         fontSlider.addEventListener('input', function() {
             document.body.style.fontSize = this.value + 'px';
