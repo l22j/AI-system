@@ -140,6 +140,21 @@
                 this.style.color = '';
             });
         });
+
+        // 테이블 행을 클릭하면 방문수를 증가시키는 함수
+        
+        document.querySelectorAll('table tbody tr').forEach(function(row) {
+            row.addEventListener('click', function() {
+                
+                var visitCell = this.lastElementChild; // 방문수가 있는 마지막 셀을 가져옵니다.
+                var currentVisitCount = parseInt(visitCell.textContent, 10); // 방문수를 숫자로 변환합니다.
+                visitCell.textContent = currentVisitCount + 1; // 방문수를 1 증가시킵니다.
+    });
+});
+
+
+
+        
     </script>
 </body>
 </html>
