@@ -3,174 +3,98 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI System Files</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-
+    <title>블로그 리스트</title>
     <style>
-        :root {
-            --main-color: #007BFF;
-            --light-background: #fafafa;
-            --light-font-color: #333;
-            --dark-background: #23252a;
-            --dark-font-color: #fafafa;
-        }
-
+        /* 기본 스타일 */
         body {
-            font-family: 'Roboto', sans-serif;
-            padding: 5% 20%;
-            background-color: var(--light-background);
-            color: var(--light-font-color);
-            line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 32px;
-            margin-bottom: 60px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-        }
-
-        ul {
-            list-style-type: none;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
 
-        li {
-            font-size: 20px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            transition: color 0.3s ease;
+        /* 추가된 스타일 */
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 30px auto;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s;
+        th, td {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 15px;
+            text-align: left;
         }
 
-        a:hover {
-            color: var(--main-color);
+        th {
+            background-color: #4CAF50;
+            color: white;
         }
 
-        .switch {
-            position: absolute;   /* 같이 움직이고 싶다면 fixed를 사용하면 됨 */
-            top: 10px;        /* 위쪽에서 10px 떨어진 위치에 배치 */
-            right: 10px;      /* 왼쪽에서 10px 떨어진 위치에 배치 */
-            display: inline-block;
-            width: 60px;
-            height: 34px;
+        tr:hover {
+            background-color: #f5f5f5;
         }
 
-        .switch input { 
-            opacity: 0;
-            width: 0;
-            height: 0;
+        .search-box {
+            width: 80%;
+            margin: 0 auto;
+            text-align: right;
         }
 
-        .slider {
-            position: absolute;
+        .search-box input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-box button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
             cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
         }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        .description {
-            font-size: 10px;
-            font-weight: 200;
-            margin-top: 5px;
-            color: #777;
-        }     
-
-        input:checked + .slider {
-            background-color: var(--main-color);
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        [data-theme="dark"] {
-            background-color: var(--dark-background);
-            color: var(--dark-font-color);
-        }
-
     </style>
 </head>
 
 <body>
-    <h1>2023-2 인공지능시스템</h1>
-    <ul>
-        <li>
-            <a href="https://l22j.github.io/AI-system/download/download.html">Download</a>
-            <p class="description">- 예제 파일 다운로드</p>
-        </li>
-        
-        <li>
-            <a href="file/인공지능시스템_소개.html">Orientation</a>
-            <p class="description">- 인공지능시스템 소개 및 개요</p>
-        </li>
-        <li>
-            <a href="file/Jupyter-Notebook.html">Jupyter Notebook</a>
-            <p class="description">- Jupyter Notebook 사용 방법</p>
-        </li>
-        <li>
-            <a href="file/인공지능시스템1.html">인공지능시스템(1)</a>
-            <p class="description">- Pandas, Series</p>
-        </li>
-        <li>
-            <a href="file/인공지능시스템2.html">인공지능시스템(2)</a>
-            <p class="description">- DataFrame </p>
-        </li>
-        <li>
-            <a href="file/인공지능시스템3.html">인공지능시스템(3)</a>
-            <p class="description">- Pandas(visualization)</p>
-        </li> 
-        <li>
-            <a href="file/인공지능시스템4.html">인공지능시스템(4)</a>
-            <p class="description">- Matplotlib(visualization)</p>
-        </li> 
-        <li>
-            <a href="file/인공지능시스템5.html">인공지능시스템(5)</a>
+    <!-- 검색창 추가 -->
+    <div class="search-box">
+        <input type="text" placeholder="Search">
+        <button>Q</button>
+    </div>
 
-        </li> 
-        
-    </ul>
+    <!-- 원본 목록을 표 형태로 변경 -->
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>카테고리</th>
+                <th>제목</th>
+                <th>작성시간</th>
+                <th>뷰카운트</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>카테고리명</td>
+                <td><a href="#">10월 25일 게시글 제목</a></td>
+                <td>2017-10-20</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>카테고리명</td>
+                <td><a href="#">10월 20일 게시글 제목</a></td>
+                <td>2017-09-26</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <label class="switch">
-        <input type="checkbox" id="themeSwitch">
-        <span class="slider"></span>
-    </label>
-
-    <script>
-        const themeSwitch = document.querySelector('#themeSwitch');
-        themeSwitch.addEventListener('change', function(event){
-            if (this.checked) {
-                document.body.setAttribute('data-theme', 'dark');
-            } else {
-                document.body.removeAttribute('data-theme');
-            }
-        });
-    </script>
 </body>
 </html>
