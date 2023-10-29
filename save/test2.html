@@ -17,29 +17,25 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 50px auto;
+            display: flex;
             background-color: #fff;
+        }
+
+        .main-content {
+            flex: 3;
+            padding: 30px;
+        }
+
+        .sidebar {
+            flex: 1;
+            border-left: 1px solid #ccc;
             padding: 30px;
         }
 
         h1 {
             color: #333;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
         }
 
         ul {
@@ -65,70 +61,40 @@
             margin-left: 15px;
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>2023-2 인공지능시스템</h1>
-        <ul>
-            <li>
-                <a href="https://l22j.github.io/AI-system/download/download.html">Download</a>
-                <p class="description">- 예제 파일 다운로드</p>
-            </li>
-            <li>
-                <a href="file/인공지능시스템_소개.html">Orientation</a>
-                <p class="description">- 인공지능시스템 소개 및 개요</p>
-            </li>
-            <li>
-                <a href="file/Jupyter-Notebook.html">Jupyter Notebook</a>
-                <p class="description">- Jupyter Notebook 사용 방법</p>
-            </li>
-            <li>
-                <a href="file/인공지능시스템1.html">인공지능시스템(1)</a>
-                <p class="description">- Pandas, Series</p>
-            </li>
-            <li>
-                <a href="file/인공지능시스템2.html">인공지능시스템(2)</a>
-                <p class="description">- DataFrame </p>
-            </li>
-            <li>
-                <a href="file/인공지능시스템3.html">인공지능시스템(3)</a>
-                <p class="description">- Pandas(visualization)</p>
-            </li> 
-            <li>
-                <a href="file/인공지능시스템4.html">인공지능시스템(4)</a>
-                <p class="description">- Matplotlib(visualization)</p>
-            </li> 
-            <li>
-                <a href="file/인공지능시스템5.html">인공지능시스템(5)</a>
-            </li> 
-        </ul>
-        <h1>AI System Files</h1>
-        <!-- [기존 코드들] ... -->
-
-        <!-- 예제로서 테이블 부분을 남겨두겠습니다. -->
-        <table>
-            <tr>
-                <th>No</th>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Views</th>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>10월 25일 강의 자료</td>
-                <td>2017-10-20</td>
-                <td>0</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>10월 20일 강의 자료</td>
-                <td>2017-09-26</td>
-                <td>0</td>
-            </tr>
-        </table>
-
+        <div class="main-content">
+            <!-- Your main content goes here -->
+            <h1>AI System Files</h1>
+            <table>
+                <!-- [기존 테이블 내용들] ... -->
+            </table>
+        </div>
+        
+        <div class="sidebar">
+            <!-- Sidebar content goes here -->
+            <h1>2023-2 인공지능시스템</h1>
+            <ul>
+                <!-- [기존 목록 내용들] ... -->
+            </ul>
+        </div>
     </div>
 </body>
 
