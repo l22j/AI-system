@@ -9,93 +9,117 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --main-color: #007BFF;
+            --light-background: #fafafa;
+            --light-font-color: #333;
+            --dark-background: #23252a;
+            --dark-font-color: #fafafa;
+        }
+
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            display: flex;
-            background-color: #fff;
-        }
-
-        .main-content {
-            flex: 3;
-            padding: 30px;
-        }
-
-        .sidebar {
-            flex: 1;
-            border-left: 1px solid #ccc;
-            padding: 30px;
+            padding: 5% 20%;
+            background-color: var(--light-background);
+            color: var(--light-font-color);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
         }
 
         h1 {
-            color: #333;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            margin-bottom: 15px;
-        }
-
-        ul li a {
-            color: #007BFF;
-            text-decoration: none;
-        }
-
-        ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .description {
-            color: #777;
-            margin-left: 15px;
+            font-size: 32px;
+            margin-bottom: 60px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #dddddd;
         }
 
         th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
             text-align: left;
+            padding: 8px;
         }
 
-        th {
+        tr:nth-child(even) {
             background-color: #f2f2f2;
         }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="main-content">
-            <!-- Your main content goes here -->
-            <h1>AI System Files</h1>
-            <table>
-                <!-- [기존 테이블 내용들] ... -->
-            </table>
-        </div>
-        
-        <div class="sidebar">
-            <!-- Sidebar content goes here -->
-            <h1>2023-2 인공지능시스템</h1>
-            <ul>
-                <!-- [기존 목록 내용들] ... -->
-            </ul>
-        </div>
-    </div>
-</body>
+    <h1>AI System Files</h1>
 
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button>Q</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>카테고리</th>
+                <th>제목</th>
+                <th>작성일자</th>
+                <th>방문수</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2</td>
+                <td>카테고리명</td>
+                <td>10월 25일 카테고리명 사건</td>
+                <td>2017-10-20</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>카테고리명</td>
+                <td>10월 20일 카테고리명 사건</td>
+                <td>2017-09-26</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // 검색 기능 구현
+        document.querySelector('.search-box button').addEventListener('click', function() {
+            // 검색어 가져오기
+            var searchTerm = document.querySelector('.search-box input').value.toLowerCase();
+
+            // 모든 행 가져오기
+            var rows = document.querySelectorAll('table tbody tr');
+
+            // 각 행 검색
+            rows.forEach(function(row) {
+                // 현재 행의 텍스트 가져오기
+                var rowText = row.textContent.toLowerCase();
+
+                // 텍스트에 검색어가 포함되어 있는지 확인
+                if (rowText.indexOf(searchTerm) !== -1) {
+                    // 포함되어 있다면 행을 보이게 함
+                    row.style.display = "";
+                } else {
+                    // 포함되어 있지 않다면 행을 숨김
+                    row.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
 </html>
